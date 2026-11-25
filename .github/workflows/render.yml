@@ -43,7 +43,7 @@ jobs:
           B=$(( A + S - 1 ))
           [ $B -ge $TOTAL ] && B=$(( TOTAL - 1 ))
           echo "frames $A-$B"
-          npx remotion render "$COMP" "../chunk-${{ matrix.i }}.mp4" --frames="$A-$B" --gl=swangle --concurrency=$(nproc) --muted --codec=h264 --crf=18
+          npx remotion render "$COMP" "../chunk-${{ matrix.i }}.mp4" --frames="$A-$B" --gl=swangle --concurrency=$(nproc) --codec=h264 --crf=18
       - uses: actions/upload-artifact@v4
         with:
           name: chunk-${{ matrix.i }}
@@ -60,12 +60,11 @@ jobs:
           pattern: chunk-*
           merge-multiple: true
       - run: sudo apt-get update && sudo apt-get install -y ffmpeg
-      - name: Gabung + pasang suara
+      - name: Gabung potongan video + audio
         run: |
           cd parts
           for f in $(ls chunk-*.mp4 | sort -V); do echo "file '$f'" >> list.txt; done
-          ffmpeg -y -f concat -safe 0 -i list.txt -c copy video.mp4
-          ffmpeg -y -i video.mp4 -i ../02-videos/rain-calm/voice.mp3 -map 0:v -map 1:a -c:v copy -c:a aac -b:a 192k -shortest ../rain-calm-final.mp4
+          ffmpeg -y -f concat -safe 0 -i list.txt -c:v copy -c:a aac -b:a 192k ../rain-calm-final.mp4
       - uses: actions/upload-artifact@v4
         with:
           name: rain-calm-final
