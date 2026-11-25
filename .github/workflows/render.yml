@@ -59,6 +59,7 @@ jobs:
           path: parts
           pattern: chunk-*
           merge-multiple: true
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg
       - name: Gabung + pasang suara
         run: |
           cd parts
