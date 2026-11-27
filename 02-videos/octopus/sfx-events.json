@@ -1,0 +1,13 @@
+[
+ { "t": 0.0, "sfx": "00-underwater-bed-loop", "db": 6 },
+ { "t": 0.05, "sfx": "01-fish-swoosh", "db": -2 },
+ { "t": 4.70, "sfx": "02-water-jet", "db": -2 },
+ { "t": 6.90, "sfx": "02-bubble-stream", "db": -6 },
+ { "t": 14.50, "sfx": "03-heart-stop", "db": 2 },
+ { "t": 23.80, "sfx": "04-heartbeat-two", "db": -4 },
+ { "t": 28.70, "sfx": "05-blueshimmer", "db": -4 },
+ { "t": 38.40, "sfx": "06-rock-squeeze", "db": -2 },
+ { "t": 42.50, "sfx": "06-fish-leave", "db": -3 },
+ { "t": 45.10, "sfx": "07-heartbeat-return", "db": -1 },
+ { "t": 50.30, "sfx": "07-sand-crawl", "db": -5 }
+]

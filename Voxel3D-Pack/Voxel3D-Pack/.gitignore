@@ -1,0 +1,5 @@
+node_modules/
+out/
+ENV-REPORT.md
+*.mp4
+!02-videos/**/*.mp4

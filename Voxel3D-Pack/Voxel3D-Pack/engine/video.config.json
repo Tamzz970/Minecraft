@@ -1,0 +1,14 @@
+{
+  "active": "RainCalm",
+  "videos": {
+    "RainCalm": {
+      "fps": 60,
+      "frames": 1354,
+      "audio": "engine/public/rain-calm/voice.mp3"
+    },
+    "WalkDemo": {
+      "fps": 60,
+      "frames": 360
+    }
+  }
+}

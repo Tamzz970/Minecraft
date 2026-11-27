@@ -4,9 +4,11 @@ import "@fontsource/inter/900.css";
 import { Main } from "./Main";
 import { RatTails } from "./videos/RatTails";
 import { NvidiaV4 } from "./videos/NvidiaV4";
+import { Octopus } from "./videos/Octopus";
 // DURATION: set durationInFrames = ceil(voiceover_seconds * 30). Use --props or edit per video.
 export const Root: React.FC = () => <>
   <Composition id="Main" component={Main} width={720} height={1280} fps={30} durationInFrames={60} />
   <Composition id="RatTails" component={RatTails} width={720} height={1280} fps={30} durationInFrames={1516} />
   <Composition id="NvidiaV4" component={NvidiaV4} width={720} height={1280} fps={30} durationInFrames={661} />
+  <Composition id="Octopus" component={Octopus} width={720} height={1280} fps={30} durationInFrames={1627} />
 </>;
