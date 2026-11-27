@@ -1,6 +1,8 @@
 name: Render Remotion Video
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
     inputs:
       composition:
@@ -23,9 +25,10 @@ jobs:
         working-directory: engine
         run: |
           ENTRY=$([ -f src/index.ts ] && echo src/index.ts || echo src/Root.tsx)
-          npx remotion render "$ENTRY" "${{ github.event.inputs.composition }}" "out/${{ github.event.inputs.composition }}.mp4"
+          COMP="${{ github.event.inputs.composition || 'Octopus' }}"
+          npx remotion render "$ENTRY" "$COMP" "out/${COMP}.mp4"
       - name: Upload video
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.event.inputs.composition }}-video
+          name: ${{ github.event.inputs.composition || 'Octopus' }}-video
           path: engine/out/*.mp4
