@@ -1,0 +1,21 @@
+# Daftar SFX manual - current
+
+Buat setiap efek suara di bawah ini sendiri (generator SFX AI, rekaman, atau library), lalu simpan dengan nama file persis seperti kolom *File* dan taruh di folder `user-sfx/`. Setelah itu kirim pesan "SFX siap" dan video akan di-mix ulang.
+
+Tips: ekspor WAV/MP3 mono atau stereo, puncak sekitar -3 dB, tanpa musik, tanpa suara orang, tanpa gema panjang. Durasi boleh lebih panjang sedikit; saya potong sesuai kolom Durasi.
+
+| No | File | Mulai (detik) | Durasi (detik) | Selesai | Terjadi di video | Prompt (salin ke generator SFX) | Volume |
+|---|---|---|---|---|---|---|---|
+| 1 | `sfx-01.wav` | 7.60 | 0.65 | 8.25 | Pak Dupont mengumumkan hadiah per tikus | Heavy rubber stamp slam on a wooden desk, official, short, dry, cartoon. Exactly 0.65 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 2 | `sfx-02.wav` | 15.81 | 0.53 | 16.34 | Pergantian ke hari berikutnya, antrean muncul | Fast air whoosh, left to right, crisp, cartoon. Exactly 0.53 seconds long, single clean sound, no music, no voices, no reverb tail | soft |
+| 3 | `sfx-03.wav` | 16.55 | 2.04 | 18.59 | Antrean orang mengular sampai ke jalan | Small crowd murmuring and shuffling feet in a street queue, no clear words, close, dry. Exactly 2.04 seconds long, single clean sound, no music, no voices, no reverb tail | soft |
+| 4 | `sfx-04.wav` | 20.95 | 0.65 | 21.60 | Minh meletakkan tas penuh ekor | Heavy cloth bag dropped on a wooden counter with soft squishy rustle, cartoon, short, dry. Exactly 0.65 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 5 | `sfx-05.wav` | 23.94 | 0.84 | 24.78 | Pak Dupont puas melihat tas ekor | Cheerful single bell ding, bright, cartoon, short. Exactly 0.84 seconds long, single clean sound, no music, no voices, no reverb tail | soft |
+| 6 | `sfx-06.wav` | 27.50 | 0.53 | 28.03 | Minh memotong ekor tikus di selokan | Small scissors snip, crisp, cartoon, very short, dry. Exactly 0.53 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 7 | `sfx-07.wav` | 29.27 | 0.72 | 29.99 | Tikus tanpa ekor lari dilepas | Tiny rat squeak and fast scurrying paws on stone, cartoon, short, dry. Exactly 0.72 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 8 | `sfx-08.wav` | 36.59 | 1.51 | 38.10 | Minh beternak banyak tikus di belakang rumah | Many small rats squeaking and scratching in wooden cages, comedic, close, dry. Exactly 1.51 seconds long, single clean sound, no music, no voices, no reverb tail | soft |
+| 9 | `sfx-09.wav` | 45.16 | 0.72 | 45.88 | Pegawai bertanya soal tikus tanpa ekor | Short comedic record scratch with a quick stop, cartoon, dry. Exactly 0.72 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 10 | `sfx-10.wav` | 46.63 | 1.51 | 48.14 | Pak Dupont terdiam, suasana canggung | Awkward silence with a few crickets chirping, then one distant dog bark, dry. Exactly 1.51 seconds long, single clean sound, no music, no voices, no reverb tail | soft |
+| 11 | `sfx-11.wav` | 48.63 | 0.91 | 49.54 | Pak Dupont sadar ia menggaji peternak tikus | Classic cash register ka-ching, bright bell and drawer slide, cartoon, short, dry. Exactly 0.91 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+
+**Total:** 11 SFX, 10.61 s

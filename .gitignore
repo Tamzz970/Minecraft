@@ -1,4 +1,9 @@
 node_modules/
-out/
-*.mp4
-!02-videos/**/*.mp4
+engine/node_modules/
+engine/out/
+engine/.cache/
+.gl-flag
+ENV-REPORT.md
+99-exports/
+*.tmp
+.DS_Store

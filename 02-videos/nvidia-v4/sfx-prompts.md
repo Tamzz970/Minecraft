@@ -1,0 +1,17 @@
+# Daftar SFX manual - nvidia-v4
+
+Buat setiap efek suara di bawah ini sendiri (generator SFX AI, rekaman, atau library), lalu simpan dengan nama file persis seperti kolom *File* dan taruh di folder `user-sfx/`. Setelah itu kirim pesan "SFX siap" dan video akan di-mix ulang.
+
+Tips: ekspor WAV/MP3 mono atau stereo, puncak sekitar -3 dB, tanpa musik, tanpa suara orang, tanpa gema panjang. Durasi boleh lebih panjang sedikit; saya potong sesuai kolom Durasi.
+
+| No | File | Mulai (detik) | Durasi (detik) | Selesai | Terjadi di video | Prompt (salin ke generator SFX) | Volume |
+|---|---|---|---|---|---|---|---|
+| 1 | `sfx-01.wav` | 1.16 | 0.6 | 1.76 | Panah menancap di lantai, karakter kaget | Deep cartoon thud impact, heavy and short, dry. Exactly 0.6 seconds long, single clean sound, no music, no voices, no reverb tail | loud |
+| 2 | `sfx-02.wav` | 1.85 | 1.1 | 2.95 | Mug terlempar lalu pecah | Ceramic mug shattering on a hard floor, bright, close mic. Exactly 1.1 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 3 | `sfx-03.wav` | 6.77 | 0.35 | 7.12 | Mahkota diletakkan ke podium (CEO mundur) | Heavy rubber stamp thump on wood, single hit, dry. Exactly 0.35 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 4 | `sfx-04.wav` | 11.42 | 0.6 | 12.02 | Domino terakhir menjatuhkan papan SINCE 2012 | Wooden sign slamming down, short deep thud, dry. Exactly 0.6 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 5 | `sfx-05.wav` | 13.30 | 0.55 | 13.85 | Transisi whip ke jalanan Wall Street | Fast whoosh transition, left to right, crisp air swish. Exactly 0.55 seconds long, single clean sound, no music, no voices, no reverb tail | normal |
+| 6 | `sfx-06.wav` | 15.77 | 0.25 | 16.02 | Lampu kilat wartawan menyala | Single camera shutter click with tiny flash pop, dry. Exactly 0.25 seconds long, single clean sound, no music, no voices, no reverb tail | loud |
+| 7 | `sfx-07.wav` | 19.05 | 1.4 | 20.45 | Mahkota jatuh dan menggelinding | Metal crown falling and rolling on a hard floor, slowing down, close mic. Exactly 1.4 seconds long, single clean sound, no music, no voices, no reverb tail | loud |
+
+**Total:** 7 SFX, 4.85 s

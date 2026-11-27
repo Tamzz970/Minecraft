@@ -32,18 +32,36 @@ const Inner: React.FC<{ from: number; first?: boolean; trans: string; bg: string
   );
 };
 
-type G = { text: string; a: number };
-const groups: G[] = (() => {
+/* ---------- captions: style is chosen per video via public/caption-style.json  {"style":"classic|highlight|minimal|impact"} ---------- */
+import capCfg from "../public/caption-style.json";
+export type CapStyle = "classic" | "highlight" | "minimal" | "impact";
+type G = { words: string[]; a: number; b: number };
+const PER: Record<CapStyle, number> = { classic: 2, highlight: 2, minimal: 4, impact: 1 };
+const build = (style: CapStyle): G[] => {
   const g: G[] = []; let cur: number[] = [];
-  const flush = () => { if (cur.length) { g.push({ text: cur.map((i) => String(SCRIPT[i]).replace(/[.,!?;:]$/, "")).join(" "), a: words[cur[0]].start }); cur = []; } };
-  words.forEach((_, i) => { cur.push(i); if (cur.length === 2 || /[.,!?;:]$/.test(String(SCRIPT[i]))) flush(); });
+  const flush = () => { if (cur.length) { g.push({ words: cur.map((i) => String(SCRIPT[i]).replace(/^["“”]+/, "").replace(/[.,!?;:]*["“”]*$/, "")), a: words[cur[0]].start, b: words[cur[cur.length - 1]].end }); cur = []; } };
+  words.forEach((_, i) => { cur.push(i); if (cur.length === PER[style] || /[.,!?;:]$/.test(String(SCRIPT[i]))) flush(); });
   flush(); return g;
-})();
-export const Captions: React.FC = () => {
+};
+const STYLE: CapStyle = (["classic", "highlight", "minimal", "impact"].includes((capCfg as { style: string }).style) ? (capCfg as { style: CapStyle }).style : "classic");
+const groups = build(STYLE);
+export const Captions: React.FC<{ style?: CapStyle }> = ({ style = STYLE }) => {
+  const gs = style === STYLE ? groups : build(style);
   const f = useCurrentFrame(), t = f / FPS;
-  const idx = groups.findIndex((g, i) => t >= g.a - 0.02 && t < (groups[i + 1]?.a ?? 99) - 0.02); const g = groups[Math.max(0, idx)];
-  const sc = interpolate(t - g.a, [0, 0.12], [0.75, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.back(2.6)) });
-  return <div style={{ position: "absolute", left: 30, right: 30, top: 880, textAlign: "center", fontFamily: "Inter, Arial", fontWeight: 900, fontSize: 88, lineHeight: 1.05, color: "#fff", WebkitTextStroke: "12px #000", paintOrder: "stroke fill", transform: `scale(${sc})`, textShadow: "0 8px 0 rgba(0,0,0,.35)" }}>{g.text}</div>;
+  const idx = gs.findIndex((g, i) => t >= g.a - 0.02 && t < (gs[i + 1]?.a ?? 99) - 0.02); const g = gs[Math.max(0, idx)];
+  const pop = (amt: number, dur: number) => interpolate(t - g.a, [0, dur], [amt, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.back(2.6)) });
+  const base: React.CSSProperties = { position: "absolute", left: 30, right: 30, top: 880, textAlign: "center", fontFamily: "Inter, Arial", fontWeight: 900, lineHeight: 1.05, color: "#fff", paintOrder: "stroke fill" };
+  if (style === "minimal") {
+    const o = interpolate(t - g.a, [0, 0.1], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
+    return <div style={{ ...base, left: 50, right: 50, top: 900, fontWeight: 800, fontSize: 58, WebkitTextStroke: "9px #000", textShadow: "0 5px 0 rgba(0,0,0,.3)", opacity: o, transform: `translateY(${(1 - o) * 10}px)` }}>{g.words.join(" ")}</div>;
+  }
+  if (style === "impact") {
+    return <div style={{ ...base, top: 850, fontSize: 124, textTransform: "uppercase", WebkitTextStroke: "16px #000", textShadow: "0 10px 0 rgba(0,0,0,.4)", transform: `scale(${pop(0.55, 0.14)})` }}>{g.words[0]}</div>;
+  }
+  const act = style === "highlight" ? Math.max(0, g.words.findIndex((_, k) => { const wi = words.findIndex((w) => Math.abs(w.start - g.a) < 1e-6); const w = words[wi + k]; return w && t >= w.start - 0.02 && t < w.end + 0.02; })) : -1;
+  return <div style={{ ...base, fontSize: 88, WebkitTextStroke: "12px #000", textShadow: "0 8px 0 rgba(0,0,0,.35)", transform: `scale(${pop(0.75, 0.12)})` }}>
+    {g.words.map((w, k) => <span key={k} style={{ color: style === "highlight" && k === act ? "#FFE600" : "#fff" }}>{k ? " " : ""}{w}</span>)}
+  </div>;
 };
 
 const Demo = ({ t, f }: Ctx) => (<>

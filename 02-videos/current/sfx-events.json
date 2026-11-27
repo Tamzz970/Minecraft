@@ -1,0 +1,90 @@
+[
+ {
+  "t": 7.6,
+  "dur": 0.648,
+  "name": "stamp",
+  "what": "Pak Dupont mengumumkan hadiah per tikus",
+  "prompt": "Heavy rubber stamp slam on a wooden desk, official, short, dry, cartoon",
+  "db": -4
+ },
+ {
+  "t": 15.81,
+  "dur": 0.528,
+  "name": "whoosh-next-day",
+  "what": "Pergantian ke hari berikutnya, antrean muncul",
+  "prompt": "Fast air whoosh, left to right, crisp, cartoon",
+  "db": -6
+ },
+ {
+  "t": 16.55,
+  "dur": 2.04,
+  "name": "queue-murmur",
+  "what": "Antrean orang mengular sampai ke jalan",
+  "prompt": "Small crowd murmuring and shuffling feet in a street queue, no clear words, close, dry",
+  "db": -8
+ },
+ {
+  "t": 20.95,
+  "dur": 0.648,
+  "name": "bag-plop",
+  "what": "Minh meletakkan tas penuh ekor",
+  "prompt": "Heavy cloth bag dropped on a wooden counter with soft squishy rustle, cartoon, short, dry",
+  "db": -4
+ },
+ {
+  "t": 23.94,
+  "dur": 0.84,
+  "name": "ding",
+  "what": "Pak Dupont puas melihat tas ekor",
+  "prompt": "Cheerful single bell ding, bright, cartoon, short",
+  "db": -6
+ },
+ {
+  "t": 27.5,
+  "dur": 0.528,
+  "name": "snip",
+  "what": "Minh memotong ekor tikus di selokan",
+  "prompt": "Small scissors snip, crisp, cartoon, very short, dry",
+  "db": -3
+ },
+ {
+  "t": 29.27,
+  "dur": 0.72,
+  "name": "rat-squeak",
+  "what": "Tikus tanpa ekor lari dilepas",
+  "prompt": "Tiny rat squeak and fast scurrying paws on stone, cartoon, short, dry",
+  "db": -5
+ },
+ {
+  "t": 36.59,
+  "dur": 1.512,
+  "name": "rat-chorus",
+  "what": "Minh beternak banyak tikus di belakang rumah",
+  "prompt": "Many small rats squeaking and scratching in wooden cages, comedic, close, dry",
+  "db": -7
+ },
+ {
+  "t": 45.16,
+  "dur": 0.72,
+  "name": "record-scratch",
+  "what": "Pegawai bertanya soal tikus tanpa ekor",
+  "prompt": "Short comedic record scratch with a quick stop, cartoon, dry",
+  "db": -4
+ },
+ {
+  "t": 46.63,
+  "dur": 1.512,
+  "name": "crickets",
+  "what": "Pak Dupont terdiam, suasana canggung",
+  "prompt": "Awkward silence with a few crickets chirping, then one distant dog bark, dry",
+  "db": -8
+ },
+ {
+  "t": 48.63,
+  "dur": 0.912,
+  "name": "cash-register",
+  "what": "Pak Dupont sadar ia menggaji peternak tikus",
+  "prompt": "Classic cash register ka-ching, bright bell and drawer slide, cartoon, short, dry",
+  "db": -4
+ }
+]

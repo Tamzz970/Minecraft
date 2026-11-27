@@ -1,0 +1,9 @@
+[
+ {"t": 1.16, "dur": 0.6, "name": "impact", "sfx": "impact", "what": "Panah menancap di lantai, karakter kaget", "prompt": "Deep cartoon thud impact, heavy and short, dry", "db": 2},
+ {"t": 1.85, "dur": 1.1, "name": "glass", "sfx": "glass", "what": "Mug terlempar lalu pecah", "prompt": "Ceramic mug shattering on a hard floor, bright, close mic", "db": -4},
+ {"t": 6.77, "dur": 0.35, "name": "stamp", "sfx": "stamp", "what": "Mahkota diletakkan ke podium (CEO mundur)", "prompt": "Heavy rubber stamp thump on wood, single hit, dry", "db": -2},
+ {"t": 11.42, "dur": 0.6, "name": "impact", "sfx": "impact", "what": "Domino terakhir menjatuhkan papan SINCE 2012", "prompt": "Wooden sign slamming down, short deep thud, dry", "db": -5},
+ {"t": 13.3, "dur": 0.55, "name": "whoosh", "sfx": "whoosh", "what": "Transisi whip ke jalanan Wall Street", "prompt": "Fast whoosh transition, left to right, crisp air swish", "db": -4},
+ {"t": 15.77, "dur": 0.25, "name": "click", "sfx": "click", "what": "Lampu kilat wartawan menyala", "prompt": "Single camera shutter click with tiny flash pop, dry", "db": -1},
+ {"t": 19.05, "dur": 1.4, "name": "roll", "sfx": "roll", "what": "Mahkota jatuh dan menggelinding", "prompt": "Metal crown falling and rolling on a hard floor, slowing down, close mic", "db": -1}
+]
