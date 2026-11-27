@@ -72,7 +72,7 @@ jobs:
           ffmpeg -y -v error -f concat -safe 0 -i list.txt -c copy "$NAME-silent.mp4"
           AUD=engine/public/mix.wav; [ -f "$AUD" ] || AUD=engine/public/voice.wav
           bash tools/remux.sh "$NAME-silent.mp4" "$AUD" "$NAME.mp4"
-          F=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$NAME-silent.mp4")
+          F=$(ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=nb_read_frames -of csv=p=0 "$NAME-silent.mp4" | tr -dc 0-9)
           echo "frames in stitched video: $F (expected ${{ needs.plan.outputs.frames }})"
           [ "$F" = "${{ needs.plan.outputs.frames }}" ]
           mkdir -p out && mv "$NAME.mp4" "$NAME-silent.mp4" out/
