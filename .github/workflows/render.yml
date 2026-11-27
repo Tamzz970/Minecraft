@@ -27,7 +27,7 @@ jobs:
           CH="${{ inputs.chunks }}";   [ -n "$CH" ]     || CH=$(cfg chunks); [ -n "$CH" ] || CH=6
           [ "$CH" -gt 12 ] && CH=12
           AUD=engine/public/mix.wav; [ -f "$AUD" ] || AUD=engine/public/voice.wav
-          DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$AUD")
+          DUR=$(python3 -c "import wave,sys; w=wave.open(sys.argv[1]); print(w.getnframes()/w.getframerate())" "$AUD")
           FRAMES=$(python3 -c "import math,sys; print(math.ceil(float(sys.argv[1])*30))" "$DUR")
           echo "comp=$COMP video=$VIDEO chunks=$CH audio=$AUD ${DUR}s => $FRAMES frames"
           echo "matrix=$(python3 tools/github/plan_chunks.py "$FRAMES" "$CH")" >> "$GITHUB_OUTPUT"
